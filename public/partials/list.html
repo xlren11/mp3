@@ -1,0 +1,47 @@
+<nav class="top-bar navbar">
+    <div class="row">
+        <h3 id="title1" class="small-12">
+            <strong id="ttt">IMDB Top 250 Movie Directory</strong>
+        </h3>
+    </div>
+    <div id="menus" class="row align-center">
+        <a class="menuTop small-2 medium-1 large-1 columns" href="#/list"><strong>Search</strong></a>
+        <a class="menuTop small-2 medium-1 large-1 columns" href="#/gallery"><strong>Gallery</strong></a>
+    </div>
+</nav>
+
+<div ng-controller="listCtrl" class="content">
+    <br>
+    <div class="row align-center">
+        <input class="search-bar small-8 medium-6 large-6 search-line" ng-model="query" placeholder="Type in search here">
+    </div>
+    <div class="row align-center">
+        <div class="small-8 medium-6 large-6">
+            <input type="radio" name="sort" value="asc" ng-click="reverse=false" checked> ascending
+            <input type="radio" name="sort" value="desc" ng-click="reverse=true"> descending
+        </div>
+    </div>
+    <div class="row align-center">
+        <select class="small-8 medium-6 large-6 sstyle" ng-model="order">
+            <option value="rank">Sorted by Rank</option>
+            <option value="title">Sorted by Title</option>
+        </select>
+    </div>
+    <div class="row align-center">
+        <div class="small-12 medium-8 large-6" >
+            <div class="row lists" ng-style="myStyle" ng-mouseover="myStyle={'background-color': 'skyblue'}" ng-mouseleave="myStyle={'background-color': 'transparent'}" ng-show="query!=''" ng-repeat="movie in movies|orderBy: order:reverse|filter:query">
+                <a class="small-12 row " href="#/details/{{movie.rank}}">
+                    <div class="small-3 columns">
+                        <img class="thumbnail" ng-src="./data/images/{{movie.imdbID+'.jpg'}}">
+                    </div>
+                    <div class="small-9 columns">
+                        <br>
+                        <p class="para"><strong>{{movie.title}} ({{movie.released}})</strong></p>
+                        <p class="para" style="color:darkred">Rank:{{movie.rank}}</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+

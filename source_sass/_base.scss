@@ -1,1 +1,87 @@
 // Add any custom Sass & CSS here
+.navbar {
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  height: $navheight;
+  box-shadow: 0 0 3px blue;
+  background-color: white;
+  #title1 {
+    text-align: center;
+    margin-bottom: 0px;
+  }
+}
+.content {
+  position: relative;
+  top: $navheight;
+  #genreBar {
+    max-width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  #menus {
+    .menuTop {
+      text-align: center;
+    }
+  }
+  .search-bar {
+    box-shadow: 0 0 3px blue;
+  }
+  .sstyle {
+    box-shadow: 0 0 3px blue;
+  }
+  .gallery-img-list {
+    padding-top:5px;
+    padding-bottom:5px;
+    .gimg {
+      padding:5px;
+    }
+  }
+  #prev{
+    text-align:center;
+  }
+  #next{
+    text-align:center;
+  }
+  .detail-box {
+    box-shadow: 0 0 3px red;
+
+    .detail-img {
+      width:100%;
+    }
+  }
+  .para{
+    color: darkblue;
+  }
+}
+
+.enlarge {
+  background-color: black;
+  color: red;
+  opacity: 0.8;
+}
+
+.active {
+  background-color: skyblue;
+}
+.genre_list {
+  height: 30px;
+  line-height: 30px;
+  display: inline;
+  box-shadow: 0 0 2px blue;
+  text-align: center;
+}
+
+#glist {
+  list-style-type: none;
+}
+
+.thumbnail {
+  height: 150px;
+  width: auto;
+}
+.lists {
+  box-shadow: 0 0 3px blue;
+  height: 150px;
+  z-index: 10;
+}

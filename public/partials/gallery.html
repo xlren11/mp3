@@ -1,0 +1,25 @@
+<nav class="top-bar navbar">
+    <div class="row">
+        <h3 id="title1" class="small-12">
+            <strong>IMDB Top 250 Movie Directory</strong>
+        </h3>
+    </div>
+    <div id="menus" class="row align-center">
+        <a class="menuTop small-2 medium-1 large-1 columns" href="#/list"><strong>Search</strong></a>
+        <a class="menuTop small-2 medium-1 large-1 columns" href="#/gallery"><strong>Gallery</strong></a>
+    </div>
+</nav>
+
+<div ng-controller="galleryCtrl" class="content">
+    <ul id="genreBar" class="row">
+        <li class="column large-1 medium-2 small-3 genre_list" ng-repeat="gen in genres" ng-click="clic(gen.name)" ng-class="{active:genreOption==gen.name}" ng-mouseover="mystyle={'color':'red'}" ng-mouseleave="mystyle={'color':'black'}" ng-style="mystyle">{{gen.name}}</li>
+    </ul>
+    <div>
+        <ul class="row" id="glist">
+            <li class="gallery-img-list large-2 medium-4 small-6 column"  ng-repeat="movie in select(genreOption) | orderBy:order">
+                <a href="#/details/{{movie.rank}}"><img class="gimg" ng-style="myStyle2" ng-mouseover="myStyle2={'padding': '0px'}" ng-mouseleave="myStyle2={'padding': '5px'}" ng-src="./data/images/{{movie.imdbID+'.jpg'}}"></a>
+            </li>
+        </ul>
+    </div>
+</div>
+

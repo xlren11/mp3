@@ -1,0 +1,46 @@
+<nav class="top-bar navbar">
+    <div class="row">
+        <h3 id="title1" class="small-12">
+            <strong>IMDB Top 250 Movie Directory</strong>
+        </h3>
+    </div>
+    <div id="menus" class="row align-center">
+        <a class="menuTop small-2 medium-1 large-1 columns" href="#/list"><strong>Search</strong></a>
+        <a class="menuTop small-2 medium-1 large-1 columns" href="#/gallery"><strong>Gallery</strong></a>
+    </div>
+</nav>
+
+
+<div ng-controller="detailCtrl" class="content">
+    <div class="row align-center">
+        <div class="detail-box small-12 medium-8 large-6">
+            <div class="row align-justify">
+                <div class="small-2 columns" id="prev"><a href="#/details/{{movie.rank-1}}">PREV</a></div>
+                <div class="small-2 columns" id="next"><a href="#/details/{{movie.rank+1}}">NEXT</a></div>
+            </div>
+            <div class="row">
+                <div class="small-1 columns"></div>
+                <div class="small-4 columns">
+                    <img class="detail-img" ng-src="data/images/{{movie.imdbID+'.jpg'}}">
+                </div>
+                <div class="small-7 columns">
+                    <strong>{{movie.title}}</strong> ({{movie.released}})<br>
+                    Rank: {{rank}}<br>
+                    Directed by:
+                    <ul>
+                        <li ng-repeat="direct in movie.director"><em>{{direct}}</em></li>
+                    </ul>
+                    Actors:
+                    <ul>
+                        <li ng-repeat="actor in movie.actors"><em>{{actor}}</em></li>
+                    </ul>
+                </div>
+                <div class="row align-center">
+                    <div class="small-10 columns">
+                        {{movie.plot}}<br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
