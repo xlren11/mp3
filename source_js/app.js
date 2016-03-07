@@ -7,7 +7,7 @@ app.config(function ($routeProvider) {
             controller: 'galleryCtrl'
         })
         .when('/list', {
-            templateUrl: '/partials/list.html',
+            templateUrl: './partials/list.html',
             controller: 'listCtrl'
         })
         .when('/details/:movieRank', {
