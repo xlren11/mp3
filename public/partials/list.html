@@ -31,10 +31,10 @@
         <div class="small-12 medium-8 large-6" >
             <div class="row lists" ng-style="myStyle" ng-mouseover="myStyle={'background-color': 'skyblue'}" ng-mouseleave="myStyle={'background-color': 'transparent'}" ng-show="query!=''" ng-repeat="movie in movies|orderBy: order:reverse|filter:query">
                 <a class="small-12 row " href="#/details/{{movie.rank}}">
-                    <div class="small-3 columns">
+                    <div class="small-4 columns">
                         <img class="thumbnail" ng-src="./data/images/{{movie.imdbID+'.jpg'}}">
                     </div>
-                    <div class="small-9 columns">
+                    <div class="small-8 columns">
                         <br>
                         <p class="para"><strong>{{movie.title}} ({{movie.released}})</strong></p>
                         <p class="para" style="color:darkred">Rank:{{movie.rank}}</p>
